@@ -33,7 +33,7 @@ console.log(bmi(65, 1.8)) // "Normal"
 console.log(bmi(72, 1.6)) // "Sobrepeso"
 console.log(bmi(52, 1.75)) //  "Bajo de peso"
 console.log(bmi(135, 1.7)) // "Obeso"
-console.log(bmi(86,1.7))
+console.log(bmi(68,1.7))
 
 
 function likes(numero){
@@ -291,3 +291,166 @@ function terminanConS(str){
 console.log(terminanConS(["pruebas", "arroz", "árbol", "tokens"])) // ["pruebas", "tokens"]
 console.log(terminanConS(["beta", "delta", "gama"])) // []
 console.log(terminanConS([])) // []
+
+function imprimirArreglo0(are){
+    for(var i=0; i<are.length; i++){
+    console.log(are[i]);
+    }
+}
+imprimirArreglo0([1,3, "Hola", 2, "Mundo"])
+// 1
+// Hola
+// 2
+// Mundo
+
+
+function imprimirMatriz(arr){
+    for(var i=0; i<arr.length; i++){
+        for(var j=0; j<arr[i].length; j++){
+            console.log(arr[i][j])
+        }
+    }
+}
+imprimirMatriz([
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+  ])
+  
+  // 1
+  // 2
+  // 3
+  // 4
+  // 5
+  // 6
+  // 7
+  // 8
+  // 9
+
+
+  function numerosAPalabras(n){
+    let respuesta=[];
+    for(var i=0; i<n.length; i++){
+        if(n[i]==0){
+            respuesta.push("cero")
+        }
+        if(n[i]==1){
+            respuesta.push("uno")
+        }
+        if(n[i]==2){
+            respuesta.push("dos")
+        }
+        if(n[i]==3){
+            respuesta.push("tres")
+        }
+        if(n[i]==4){
+            respuesta.push("cuatro")
+        }
+        if(n[i]==5){
+            respuesta.push("cinco")
+        }
+        if(n[i]==6){
+            respuesta.push("seis")
+        }
+        if(n[i]==7){
+            respuesta.push("siete")
+        }
+        if(n[i]==8){
+            respuesta.push("ocho")
+        }
+        if(n[i]==9){
+            respuesta.push("nueve")
+        }
+
+    }
+    return respuesta
+  }
+  console.log(numerosAPalabras([0, 1, 2, 3, 4])) // ["cero", "uno", "dos", "tres", "cuatro"]
+console.log(numerosAPalabras([5, 6, 7, 8, 9])) // ["cinco", "seis", "siete", "ocho", "nueve"]
+
+
+function palabrasANumeros(n){
+    let respuesta=[];
+    for(var i=0; i<n.length; i++){
+        if(n[i]=="cero"){
+            respuesta.push(0)
+        }
+        if(n[i]=="uno"){
+            respuesta.push(1)
+        }
+        if(n[i]=="dos"){
+            respuesta.push(2)
+        }
+        if(n[i]=="tres"){
+            respuesta.push(3)
+        }
+        if(n[i]=="cuatro"){
+            respuesta.push(4)
+        }
+        if(n[i]=="cinco"){
+            respuesta.push(5)
+        }
+        if(n[i]=="seis"){
+            respuesta.push(6)
+        }
+        if(n[i]=="siete"){
+            respuesta.push(7)
+        }
+        if(n[i]=="ocho"){
+            respuesta.push(8)
+        }
+        if(n[i]=="nueve"){
+            respuesta.push(9)
+        }
+    }
+    return respuesta;
+}
+console.log(palabrasANumeros(["cero", "uno", "dos", "tres", "what?", "cuatro"])) // [0, 1, 2, 3, -1, 4]
+console.log(palabrasANumeros(["cinco", "seis", "siete", "ocho", "nueve"])) // [5, 6, 7, 8, 9]
+
+function numAsteriscos(ar){
+    let numero=[];
+    for(var i=0; i<ar.length; i++){
+        if(ar[i]=="*"){
+            numero.push(ar[i])
+        }
+    }
+    return numero.length;
+}
+console.log(numAsteriscos(['', '*', '', '*'])) // 2
+console.log(numAsteriscos(['*', '*', '*'])) // 3
+console.log(numAsteriscos([])) // 0
+
+function numAsteriscoss(arr){
+    let numero=[];
+    for(var i=0; i<arr.length; i++){
+        for(var j=0; j<arr[i].length; j++){
+            if(arr[i][j]=="*"){
+                numero.push(arr[i][j])
+            }
+        }
+    }
+    return numero.length
+}
+console.log(numAsteriscoss([
+    ['*', '', '*'],
+    ['', '*', ''],
+    ['*', '', '*']
+  ]))
+  // 5
+  console.log("********************")
+
+  function distancia(a, b){
+    let respuesta=[];
+    for(var i=0; i<a.length; i++){
+            if(a[i]!=b[i]){
+                respuesta.push(1)
+            }  
+    }
+    return respuesta.length;
+    
+
+  }
+  console.log(distancia("hola", "hola")) // 0
+  console.log(distancia("sol", "tol")) // 1
+  console.log(distancia("carros", "correr")) // 3
