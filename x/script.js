@@ -454,3 +454,94 @@ console.log(numAsteriscoss([
   console.log(distancia("hola", "hola")) // 0
   console.log(distancia("sol", "tol")) // 1
   console.log(distancia("carros", "correr")) // 3
+
+console.log("***********+")
+  function summ(a,b){
+    return a+b;
+  }
+
+console.log(summ(2,2))
+
+const summ2 = (a,b) => a+b;
+console.log(summ2(2,2))
+
+const numm2=[1,2,3,4,5];
+numm2.forEach((el,index)=>console.log(`${el} esta en la posicion ${index}`))
+
+
+console.log("***********")
+const cuentaAtras= numero=>{
+    if(numero===0){
+        return
+    }
+    console.log(numero);
+    return cuentaAtras(numero-1)
+}
+cuentaAtras(5)
+
+let parImpar = numero=>{
+    if(numero===0){
+        return "Par"
+    }else if(numero===1){
+        return "Inpar"
+    }else{
+    return parImpar(numero-2)
+    }
+}
+console.log("*******")
+console.log(parImpar(20)) // Par
+console.log(parImpar(75)) // Impar
+console.log(parImpar(98)) // Par
+console.log(parImpar(113)) // Impar
+
+//ARBOL BINARIO
+let contenedor =[];
+
+function Tree(value){
+    this.data=value;
+    this.right=null;
+    this.left=null;
+}
+
+//AGREGAR DATOS
+Tree.prototype.add= function(value){
+    if(value<this.data){
+        if(this.left== null){
+            this.left=new Tree(value)
+        }else{
+            this.left.add(value)
+        }
+    }else{
+        if(this.right==null){
+            this.right=new Tree(value)
+        }else{
+            this.right.add(value)
+        }
+
+    }
+}
+
+//ORDENAR DATOS (PRE-ORDER)
+Tree.prototype.reco = function(){
+    //contenedor.push(this.data) //PRE-ORDER
+    if(this.left)this.left.reco()
+    contenedor.push(this.data) //IN-ORDER
+    if(this.right)this.right.reco()
+    //contenedor.push(this.data); //POST-ORDER
+}
+
+let tree = new Tree(50)
+tree.add(20);
+tree.add(70);
+tree.add(30);
+tree.add(65);
+tree.add(20);
+tree.add(70);
+tree.add(30);
+tree.add(65);
+tree.add(9);
+tree.reco();
+console.log("**********ARBOL BINARIO************")
+console.log(tree)
+console.log("*******ORDENAR ARBOL(PRE-ORDER)********")
+console.log(contenedor)
